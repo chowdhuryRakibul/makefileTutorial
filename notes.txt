@@ -1,0 +1,55 @@
+Toolchains/Compilation
+YouTube Video Link: https://youtu.be/nGX_fHIyaWc
+
+
+GCC = GNU C Compiler
+GNU = GNU is NOT Unix
+
+
+Multi Staged:
+- Pre-processing: (*.c --> *.i)
+- Convert ot Assembly (*.i --> *.s)
+- Convert to Object File (*.s --> *.o)
+- Linking ( *.o --> executable)
+
+ELF = Extentable and Linkable Format
+
+
+Important Linux Commands
+
+file main.o
+readelf -a main.o
+objdump -d main.o
+hexdump -c main.o
+nm main.o
+
+
+GCC Options:
+
+-I : non-standard directories to search for include files (.h)
+-L : non-standard directories to search for library files (.a/.so)
+-l : standard libraries, like libc/libm/libpthread/librt
+
+Makefile
+
+target: pre-requisite (| order-only pre-requisite)
+
+$@ : target
+$^ : all pre-requisite
+$< : first pre-requisite
+
+
+
+Variable:
+=       recursive
+:=      static
+?=      if not declared
++=      add
+
+
+Functions:
+$(patsubst pattern, replacement, text)
+
+pattern : The pattern to match
+replacement: The pattern to substitue in
+text: A whitespace-separated list of words to process
